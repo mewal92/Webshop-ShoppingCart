@@ -645,12 +645,37 @@
   }
   
   .submission button{
+    float: right;
     margin-top: 10px;
-    background-color: #95c8f1;
-    border: solid 1px;
-    border-radius: 4px;
-    height: 30px;
-    width: 50px;
+    background-color: #ff6739;
+    color: white;
+    text-align: center;
+    width: 90;
+    height: 40px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  #totprice {
+    text-align: right;
+    font-weight: bold;
+    font-family:'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    padding-right: 10px;
+  }
+
+  #submit, #remove {
+    float: right;
+    margin-top: 10px;
+    background-color: #ff6739;
+    color: white;
+    text-align: center;
+    width: 90;
+    height: 40px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   
   
