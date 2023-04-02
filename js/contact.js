@@ -1,39 +1,52 @@
-//Om en kund inte finns kommer användaren komma till index sidan
-//Gör det itne möjligt att se sidan genom att skriva in den dirrekta URLen
-if(!window.sessionStorage.getItem('customer')){
-    window.location.replace("index.html");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const messageInput = document.querySelector("#message");
+const contactForm = document.querySelector("#contact-form");
+const contactFormDiv = document.querySelector("#contact-form-div");
+const sentMessageConfirmation = document.querySelector("#sent-message-screen");
+const newFormButton = document.querySelector("#new-form");
 
-//Annars skriver vi ut varan och beställer med bekräftelse att användaren har köp något
-} else {
-    const customer = JSON.parse(window.sessionStorage.getItem('customer'));
-    const products = JSON.parse(window.localStorage.getItem('products'));
-    let cost = 0;
-    products.forEach(product => {
-        cost += product.price * product.quantity;
-    })
+//testing
+// emailInput.value = "a@a";
 
-    document.querySelector("#address").innerHTML = `
-        Varan väntas skickas till: ${customer.address} ${customer.zip} ${customer.county}
-    `;
-    document.querySelector("#email").innerHTML = `
-        Ditt kvitto har skickats till: ${customer.email}
-    `;
-    document.querySelector("#name").innerHTML = `
-        Beställaren: ${customer.name}
-    `;
-    document.querySelector("#phone").innerHTML = `
-        Telefon: ${customer.phone}
-    `;
-    products.forEach(element => {
-        document.querySelector("#title").innerHTML += `
-        <li class="vara">
-            ${element.title} x${element.quantity}
-        </li>
-    `;
-    });   
-    document.querySelector("#price").innerHTML = `
-        Pris: ${cost.toFixed(2)}€
-    `;
-    window.localStorage.removeItem('products');
-    window.sessionStorage.removeItem('customer');
+// Säkerställer att rätt div:ar laddas.
+sentMessageConfirmation.style.display = "none";
+contactFormDiv.style.display = "block";
+
+clearAllInputFields();
+nameInput.focus();
+
+// Justerar storleken på text-arean, för meddelandet, i realtid
+messageInput.addEventListener('input', (e) =>{
+    e.preventDefault();
+    console.log("messageInput changed");
+    messageInput.style.height = (messageInput.scrollHeight+2)+"px";
+})
+
+// Byter content utan att omdirigera användaren efter "submit form"
+contactForm.addEventListener('submit', (e) =>{
+    console.log("eventlistener (contactform)")
+    switchVisibility(contactFormDiv);
+    switchVisibility(sentMessageConfirmation)
+    newFormButton.focus();
+})
+
+// Byter tillbaka till nytt formulär
+newFormButton.addEventListener('click', (e) =>{
+    console.log("new form button");
+    clearAllInputFields()
+    switchVisibility(contactFormDiv);
+    switchVisibility(sentMessageConfirmation)
+})
+
+// Ändrar html-element till hidden eller shown
+function switchVisibility(element){
+    if (element.style.display === "none") element.style.display="block";
+    else element.style.display="none";
+}
+
+function clearAllInputFields() {
+    nameInput.value = null;
+    emailInput.value = null;
+    messageInput.value = null;
 }

@@ -16,11 +16,11 @@ function panel() {
         <li class="header ${path.includes("/index.html") ? "active" : ""}">
         <a href="index.html">Startpage</a>
       </li>
-          <li class="header ${path.includes("/produkter.html") ? "active" : ""}">
-            <a href="produkter.html">Products</a>
+          <li class="header ${path.includes("/products.html") ? "active" : ""}">
+            <a href="products.html">Products</a>
           </li>
-          <li class="header ${path.includes("/kontakt.html") ? "active" : ""}">
-          <a href="kontakt.html">Contact us</a>
+          <li class="header ${path.includes("/contact.html") ? "active" : ""}">
+          <a href="contact.html">Contact us</a>
         </li>
          
         </ul>
