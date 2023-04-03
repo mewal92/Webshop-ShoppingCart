@@ -314,18 +314,3 @@ function removeProduct(){
     });
 }
 
-
-
-function openForm() {
-    const opencart = document.querySelector('.open-button');
-    opencart.addEventListener('click', (e) =>{
-        document.getElementById("myForm").style.display = "block";
-  });
-}
-
-function closeForm() {
-    const closecart = document.querySelector('.close-button');
-closecart.addEventListener('click', (e) =>{
-  document.getElementById("myForm").style.display = "none";
-});
-}

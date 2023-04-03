@@ -2,6 +2,7 @@ import Product from "./product.js";
 
 
 
+
 //Tom variabel för produkten
 let product;
 let products = [];
@@ -25,8 +26,8 @@ if (window.sessionStorage.getItem("productID") == null){
     const orderButton = document.querySelector("#ORDER");
     orderButton.addEventListener('click', (e) => {
       e.preventDefault();
-
-
+  
+    
       //Kollar så att produkten inte redan är tillagd
       if(products.filter(p => p.id == product.id).length == 0){
         products.push(product);
@@ -40,7 +41,8 @@ if (window.sessionStorage.getItem("productID") == null){
       }
 
       window.localStorage.setItem("products", JSON.stringify(products));
-      
+     
+
     })
 }
 
@@ -79,3 +81,5 @@ function setHTMLValues(product){
   `;
   document.querySelector('#price').innerHTML = `<span>${product.price}€</span>`;
 }
+
+
