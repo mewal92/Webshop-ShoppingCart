@@ -732,7 +732,7 @@
   }
   
   /* The popup chat - hidden by default */
-  .chat-popup {
+  .cart-popup {
     display: none;
     position: fixed;
     top: 0%;
