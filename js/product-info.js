@@ -37,9 +37,8 @@ if (window.sessionStorage.getItem("productID") == null){
           }
         })
       }
-      openForm();
       window.localStorage.setItem("products", JSON.stringify(products));
-      
+      openForm();
       //Öppnar varukorgen när en vara lagts i korgen
 
     })
