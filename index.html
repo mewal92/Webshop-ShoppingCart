@@ -13,6 +13,7 @@
     />
     <script src="js/panels.js" type="module" defer></script>
     <script src="js/index.js" type="module" defer></script>
+    <script src="js/cartpopup.js" type="module" defer></script>
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Sen&display=swap");
@@ -23,6 +24,22 @@
   <body>
     <!-- navigeringsmeny som en lista -->
     <div id="panel"></div>
+
+    <img class="open-button" onclick="openForm()" src="images/cartimg.jpg"/>
+    
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <div id="cartpopup">In Cart:</div>
+        <div id="orders" class="gap-16px"></div>
+            <div class="gap-16px submission">
+              <p id="totprice"></p></div>
+              <button class="hidden" id="remove">Empty cart</button>
+        <a href="order.html">
+          <button type="button" class="btn cancel">Go to order</button>
+        </a>
+        <button type="button" class="close-button" onclick="closeForm()">Minimize</button>
+      </form>
+    </div>
 
     <header>
       <h1>KIMCHI STORE</h1>

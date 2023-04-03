@@ -566,30 +566,29 @@
   }
   
   .cart{
-    padding: 20px;
+    padding: 5px 5px 15px 5px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
   }
   
   .product-and-title{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     align-items: center;
   }
   
   .product-and-title h3{
     font-family: 'Sen', sans-serif;
     font-weight: 600;
-    font-size: 0.99em;
-    max-width: 200px;
-    float: left;
+    font-size: 0.79em;
+    max-width: 120px;
+    text-align: left;
+
   }
   
   .product-img{
-    max-width: 120px;
+    width: 120px;
     height: 75px;
     display: flex;
     overflow: hidden;
@@ -600,8 +599,9 @@
   }
   
   .action-price{
-    font-size: 0.95rem;
+    font-size: 0.90rem;
     font-weight: bold;
+
   }
   
   .quantity{
@@ -629,15 +629,17 @@
     width: 20px;
     background-color: white;
     border: solid 1px;
-    margin: 0 2px 0 2px;
+    margin: 0 5px 0 12px;
     height: 20px;
+
   }
   .sub{
     width: 20px;
     background-color: white;
     border: solid 1px;
-    margin: 0 2px 0 2px;
+    margin: 0 5px 0 2px;
     height: 20px;
+  
   }
   
   .quantity p{
@@ -663,21 +665,106 @@
     font-family:'Arial Narrow Bold', sans-serif;
     font-size: 20px;
     padding-right: 10px;
+    padding-bottom: 10px;
   }
 
-  #submit, #remove {
-    float: right;
-    margin-top: 10px;
-    background-color: #ff6739;
-    color: white;
-    text-align: center;
-    width: 90;
-    height: 40px;
-    padding: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
+
+  
+
+  /* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    top: 7%;
+    right: 0px;
+    width: 150px;
+    z-index: 4;
   }
   
+  #cartpopup{
+    font-size: 25px;
+    color: rgb(39, 55, 94);
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    top: 0%;
+    right: 0px;
+    z-index: 9;
+       height: 100%;
+     margin: 0em;
+     overflow-y: auto;
+  
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 400px;
+    padding: 10px;
+    background-color: white;
+    height: auto;
+    margin-bottom: 25px;
+    border: 2px solid #525252;
+  }
+  
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  .close-button{
+    background-color: #04AA6D;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: #04AA6D;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  .form-container #remove {
+    background-color: #ff1919;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
   
   
   

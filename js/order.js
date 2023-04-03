@@ -23,6 +23,8 @@ if(window.localStorage.getItem("products")){
     addition();
     subtraction();
     removeProduct();
+    openForm();
+    closeForm();
     
 
     //tar bort alla produkter
@@ -230,7 +232,7 @@ function printProductHTML(product){
             <div class="quantity">
                 <button class="add" >+</button>
                 <button class="sub" >-</button>
-                <p class="productQuantity">antal: ${product.quantity}</P>
+                <p class="productQuantity">x${product.quantity}</P>
                 <button class="delete" ><img src="images/delete.png" alt="🗑"></button>
             </div>
       `;
@@ -247,7 +249,7 @@ function addition(){
             e.preventDefault();
             products[index].quantity++;
             cost += products[index].price;
-            document.getElementsByClassName("productQuantity")[index].innerHTML = "antal: " + products[index].quantity;
+            document.getElementsByClassName("productQuantity")[index].innerHTML = "x" + products[index].quantity;
             totprice.innerHTML = `Total ${cost.toFixed(2)}€`;
             itemPrice = products[index].price * products[index].quantity;
             productPrice[index].innerHTML = `${itemPrice.toFixed(2)}€`
@@ -267,7 +269,7 @@ function subtraction(){
             e.preventDefault();
             products[index].quantity--;
             cost -= products[index].price;
-            document.getElementsByClassName("productQuantity")[index].innerHTML = "antal: " + products[index].quantity;
+            document.getElementsByClassName("productQuantity")[index].innerHTML = "x" + products[index].quantity;
             totprice.innerHTML = `Total ${cost.toFixed(2)}€`;
             itemPrice = products[index].price * products[index].quantity;
             productPrice[index].innerHTML = `${itemPrice.toFixed(2)}€`
@@ -310,4 +312,20 @@ function removeProduct(){
             location.reload();
         })
     });
+}
+
+
+
+function openForm() {
+    const opencart = document.querySelector('.open-button');
+    opencart.addEventListener('click', (e) =>{
+        document.getElementById("myForm").style.display = "block";
+  });
+}
+
+function closeForm() {
+    const closecart = document.querySelector('.close-button');
+closecart.addEventListener('click', (e) =>{
+  document.getElementById("myForm").style.display = "none";
+});
 }

@@ -1,0 +1,19 @@
+const opencart = document.querySelector('.open-button');
+opencart.addEventListener('click', (e) =>{
+
+    openForm();
+});
+
+const closecart = document.querySelector('.close-button');
+closecart.addEventListener('click', (e) =>{
+    closeForm();
+});
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+showproduct(product);
+  }
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
