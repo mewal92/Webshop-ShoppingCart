@@ -19,7 +19,7 @@ if(window.localStorage.getItem("products")){
         cost += element.price * element.quantity;
         productPrice[index].innerHTML = `${(element.price * element.quantity).toFixed(2)}€`;
     });
-    
+
     addition();
     subtraction();
     removeProduct();
@@ -289,25 +289,27 @@ function subtraction() {
 }
 
 
-function removeProduct(){
-    let removeButtons = document.getElementsByClassName("delete");
-    let totprice = document.querySelector('#totprice');
-
-    Array.prototype.forEach.call(removeButtons, function(element, index) {
-        element.addEventListener('click', e =>{
-            e.preventDefault();
-            cost -= products[index].price * products[index].quantity;
-            totprice.innerHTML = `Total ${cost.toFixed(2)}€`;      
-            products.splice(index, 1);
-            document.getElementsByClassName("cart")[index].remove();
-            localStorage.setItem('products', JSON.stringify(products));
-
-            if(products.length == 0){
-                document.querySelector('#remove').classList.add("hidden");
-                totprice.innerHTML = null;
-                localStorage.removeItem('products');
-            }
-            location.reload();
-        })
-    });
-}
+function removeProduct() {
+    const removeButtons = document.getElementsByClassName("delete");
+    const totprice = document.querySelector("#totprice");
+  
+    for (let i = 0; i < removeButtons.length; i++) {
+      const element = removeButtons[i];
+      element.addEventListener("click", (e) => {
+        e.preventDefault();
+        cost -= products[i].price * products[i].quantity;
+        totprice.innerHTML = `Total ${cost.toFixed(2)}€`;
+        products.splice(i, 1);
+        document.getElementsByClassName("cart")[i].remove();
+        localStorage.setItem("products", JSON.stringify(products));
+  
+        if (products.length === 0) {
+          document.querySelector("#remove").classList.add("hidden");
+          totprice.innerHTML = null;
+          localStorage.removeItem("products");
+        }
+        location.reload();
+      });
+    }
+  }
+  

@@ -2,7 +2,7 @@ import Product from "./product.js";
 
 
 
-//Tom variabel för produkten
+//Produktvariabel samt array för produkter till varukorg
 let product;
 let products = [];
 
@@ -16,6 +16,7 @@ if (window.localStorage.getItem("products")) {
 if (window.sessionStorage.getItem("productID") == null){
     window.location.replace("index.html");
 } else {
+
     //Hämtar id på produkten som valts
     const id = window.sessionStorage.getItem("productID");
     //fetchar produkten med det IDet
@@ -36,11 +37,11 @@ if (window.sessionStorage.getItem("productID") == null){
           }
         })
       }
-
+      openForm();
       window.localStorage.setItem("products", JSON.stringify(products));
       
-      //Ta användaren till order sidan
-    openForm();
+      //Öppnar varukorgen när en vara lagts i korgen
+
     })
 }
 
