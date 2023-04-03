@@ -615,21 +615,21 @@
     width: 20px;
     background-color: white;
     border: none;
-    
     height: 20px;
     display: flex;
-    justify-content: center;
-    margin-left: 10px;
+    justify-content: right;
+    margin-left: 5px;
   }
   .delete img{
     width: 100%;
+    overflow: hidden;
   }
   
   .add{
     width: 20px;
     background-color: white;
     border: solid 1px;
-    margin: 0 5px 0 12px;
+    margin: 0 5px 0 8px;
     height: 20px;
 
   }
@@ -643,7 +643,7 @@
   }
   
   .quantity p{
-    margin-left: 10px;
+    margin-left: 5px;
   }
   
   .submission button{
@@ -717,7 +717,8 @@
   
   /* Add styles to the form container */
   .form-container {
-    max-width: 400px;
+    max-width: 420px;
+    width: auto;
     padding: 10px;
     background-color: white;
     height: auto;
@@ -959,6 +960,7 @@
     
     .cart{
       flex-direction: column;
+      justify-content: center;
     }
     
     .product-and-title{ 
@@ -968,6 +970,7 @@
     
     .product-and-title h3{ 
       font-size: 0.8em;
+      text-align: center;
     }
   
     .action-price{
@@ -989,12 +992,38 @@
       padding: 10px;
       max-width:70px;
       max-height: 70px;
+      
     }
   
     .footer b{
       font-size: 8px;
     }
-  
+
+    .add {
+      object-fit: contain;
+      max-width: 20px;
+      max-height: 20px;;
+    }
+
+    .sub {
+      object-fit: contain;
+      max-width: 20px;
+      max-height: 20px;
+    }
+
+    .delete img {
+      object-fit: contain;
+      max-width: 20px;
+      max-height: 20px;
+    }
+
+    .product-img img{
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+
+      
+    }
   }
   
   

@@ -230,64 +230,64 @@ function printProductHTML(product){
             <div class="quantity">
                 <button class="add" >+</button>
                 <button class="sub" >-</button>
-                <p class="productQuantity">antal: ${product.quantity}</P>
+                <p class="productQuantity">x${product.quantity}</P>
                 <button class="delete" ><img src="images/delete.png" alt="🗑"></button>
             </div>
       `;
 }
 
-function addition(){
+function updateQuantity(index, amount) {
+    let totprice = document.querySelector('#totprice');
+    let productPrice = document.getElementsByClassName("action-price");
+    let itemPrice = 0;
+
+    products[index].quantity += amount;
+    cost += amount * products[index].price;
+
+    document.getElementsByClassName("productQuantity")[index].innerHTML = "x" + products[index].quantity;
+    totprice.innerHTML = `Total ${cost.toFixed(2)}€`;
+    itemPrice = products[index].price * products[index].quantity;
+    productPrice[index].innerHTML = `${itemPrice.toFixed(2)}€`;
+
+    if (products[index].quantity <= 0) {
+        products.splice(index, 1);
+        document.getElementsByClassName("cart")[index].remove();
+        localStorage.setItem('products', JSON.stringify(products));
+        location.reload();
+    } else {
+        localStorage.setItem('products', JSON.stringify(products));
+    }
+
+    if (products.length == 0) {
+        document.querySelector('#remove').classList.add("hidden");
+        totprice.innerHTML = null;
+        localStorage.removeItem('products');
+        location.reload();
+    }
+}
+
+function addition() {
     let addButtons = document.getElementsByClassName("add");
-    let totprice = document.querySelector('#totprice');
-    let productPrice = document.getElementsByClassName("action-price");
-    let itemPrice = 0;
 
     Array.prototype.forEach.call(addButtons, function(element, index) {
-        element.addEventListener('click', e =>{
+        element.addEventListener('click', e => {
             e.preventDefault();
-            products[index].quantity++;
-            cost += products[index].price;
-            document.getElementsByClassName("productQuantity")[index].innerHTML = "antal: " + products[index].quantity;
-            totprice.innerHTML = `Total ${cost.toFixed(2)}€`;
-            itemPrice = products[index].price * products[index].quantity;
-            productPrice[index].innerHTML = `${itemPrice.toFixed(2)}€`
-            localStorage.setItem('products', JSON.stringify(products));
+            updateQuantity(index, 1);
         })
     });
 }
 
-function subtraction(){
-    let addButtons = document.getElementsByClassName("sub");
-    let totprice = document.querySelector('#totprice');
-    let productPrice = document.getElementsByClassName("action-price");
-    let itemPrice = 0;
+function subtraction() {
+    let subButtons = document.getElementsByClassName("sub");
 
-    Array.prototype.forEach.call(addButtons, function(element, index) {
-        element.addEventListener('click', e =>{
+    Array.prototype.forEach.call(subButtons, function(element, index) {
+        element.addEventListener('click', e => {
             e.preventDefault();
-            products[index].quantity--;
-            cost -= products[index].price;
-            document.getElementsByClassName("productQuantity")[index].innerHTML = "antal: " + products[index].quantity;
-            totprice.innerHTML = `Total ${cost.toFixed(2)}€`;
-            itemPrice = products[index].price * products[index].quantity;
-            productPrice[index].innerHTML = `${itemPrice.toFixed(2)}€`
-            if(products[index].quantity <= 0){
-                products.splice(index, 1);
-                document.getElementsByClassName("cart")[index].remove();
-                localStorage.setItem('products', JSON.stringify(products));
-                location.reload();
-            }else{
-                localStorage.setItem('products', JSON.stringify(products));
-            }
-            if(products.length == 0){
-                document.querySelector('#remove').classList.add("hidden");
-                totprice.innerHTML = null;
-                localStorage.removeItem('products');
-                location.reload();
-            }
+            updateQuantity(index, -1);
         })
     });
 }
+
 
 function removeProduct(){
     let removeButtons = document.getElementsByClassName("delete");
