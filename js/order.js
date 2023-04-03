@@ -20,8 +20,8 @@ if(window.localStorage.getItem("products")){
         productPrice[index].innerHTML = `${(element.price * element.quantity).toFixed(2)}€`;
     });
 
-    addition();
-    subtraction();
+    addButton();
+    subButton();
     removeProduct();
     
 
@@ -46,7 +46,7 @@ if(window.localStorage.getItem("products")){
 //Gör submit knapp osynlig från början som en säkerhetsgrej
 document.getElementById("submit").classList.add('hidden');
 
-//Variabler för diverse html input taggar
+//html taggar för input
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const telInput = document.querySelector("#tel");
@@ -231,7 +231,7 @@ function printProductHTML(product){
                 <button class="add" >+</button>
                 <button class="sub" >-</button>
                 <p class="productQuantity">x${product.quantity}</P>
-                <button class="delete" ><img src="images/delete.png" alt="🗑"></button>
+                <button class="delete" ><img src="images/delete.png" alt="trash"></button>
             </div>
       `;
 }
@@ -266,7 +266,7 @@ function updateQuantity(index, amount) {
     }
 }
 
-function addition() {
+function addButton() {
     let addButtons = document.getElementsByClassName("add");
 
     Array.prototype.forEach.call(addButtons, function(element, index) {
@@ -277,7 +277,7 @@ function addition() {
     });
 }
 
-function subtraction() {
+function subButton() {
     let subButtons = document.getElementsByClassName("sub");
 
     Array.prototype.forEach.call(subButtons, function(element, index) {
