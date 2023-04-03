@@ -9,7 +9,6 @@
     <link href="css/stilmall.css" rel="Stylesheet" type="text/css" />
     <script src="js/panels.js" type="module" defer></script>
     <script src="js/order.js" type="module" defer></script>
-    <script src="js/cartpopup.js" type="module" defer></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Sen&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Allura&family=Dosis:wght@300&family=Karla:wght@300&family=Quicksand:wght@300&display=swap");
@@ -20,7 +19,7 @@
     <!-- navigeringsmeny som en lista -->
     <div id="panel"></div>
 
-    <img class="open-button" onclick="openForm()" src="images/cartimg.jpg"/>
+    <button class="open-button" onclick="openForm()"><img src="images/cartimg.jpg" alt ="cartimg"></button>
     
     <div class="chat-popup" id="myForm">
       <form action="/action_page.php" class="form-container">
@@ -35,7 +34,16 @@
         <button type="button" class="close-button" onclick="closeForm()">Minimize</button>
       </form>
     </div>
-
+    <script>
+      function openForm() {
+  
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
     <header>
       <h1>KIMCHI STORE</h1>
       <hr />
@@ -44,13 +52,13 @@
 
     <div class="flex-containerbeställning">
       <div>
-        <h4>Här kan du beställa en produkt:</h4>
+        <h4>Leveransuppgifter:</h4>
         <!-- skapar en form action page som leder till html fil, man skicaks dit när man trycker beställ -->
         <form action="action-page.html">
           <!-- skapar en field set för en typ av formulär -->
           <fieldset class="fieldset-for-beställning">
             <legend class="legend-for-beställning1">
-              Fyll i din beställning här:
+              Fyll i dina uppgifter:
             </legend>
             <div class="flex auto-margin gap-6px flex-col flex-wrap">
               <label for="name">Namn</label>
@@ -83,7 +91,7 @@
               </div>
             </div>
             <legend id="legend-for-boka-2">
-              Vilken produkt vill du beställa?
+              Bekräfta din order:
             </legend>
             <div id="orders" class="gap-16px"></div>
             <hr>

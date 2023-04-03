@@ -26,13 +26,13 @@ if(!window.sessionStorage.getItem('customer')){
     `;
     products.forEach(element => {
         document.querySelector("#title").innerHTML += `
-        <li class="vara">
+        Produkter: <ul class="vara">
             ${element.title} x${element.quantity}
-        </li>
+        </ul>
     `;
     });   
     document.querySelector("#price").innerHTML = `
-        Pris: ${cost.toFixed(2)}€
+        Att betala: ${cost.toFixed(2)}€
     `;
     window.localStorage.removeItem('products');
     window.sessionStorage.removeItem('customer');

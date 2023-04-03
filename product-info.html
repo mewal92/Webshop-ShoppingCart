@@ -13,7 +13,7 @@
     />
     <script src="js/panels.js" type="module" defer></script>
     <script src="js/product-info.js" type="module" defer></script>
-    <script src="js/cartpopup.js" type="module" defer></script>
+    <script src="js/order.js" type="module" defer></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Sen&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Allura&family=Dosis:wght@300&family=Karla:wght@300&family=Quicksand:wght@300&display=swap");
@@ -21,7 +21,7 @@
   </head>
   <div id="panel"></div>
 
-  <img class="open-button" onclick="openForm()" src="images/cartimg.jpg"/>
+  <button class="open-button" onclick="openForm()"><img src="images/cartimg.jpg" alt ="cartimg"></button>
     
     <div class="chat-popup" id="myForm">
       <form action="/action_page.php" class="form-container">
@@ -36,6 +36,16 @@
         <button type="button" class="close-button" onclick="closeForm()">Minimize</button>
       </form>
     </div>
+
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
   <body>
     <!-- navigeringsmeny som en lista -->
     <header>
