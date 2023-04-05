@@ -13,13 +13,13 @@ if(!window.sessionStorage.getItem('customer')){
     })
 
     document.querySelector("#address").innerHTML = `
-        Varan väntas skickas till: ${customer.address} ${customer.zip} ${customer.county}
+        Leveransadress: ${customer.address} ${customer.zip} ${customer.county}
     `;
     document.querySelector("#email").innerHTML = `
-        Ditt kvitto har skickats till: ${customer.email}
+        Orderbekräftelse skickas till: ${customer.email}
     `;
     document.querySelector("#name").innerHTML = `
-        Beställaren: ${customer.name}
+         ${customer.name}
     `;
     document.querySelector("#phone").innerHTML = `
         Telefon: ${customer.phone}

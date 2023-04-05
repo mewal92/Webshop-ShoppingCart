@@ -9,7 +9,7 @@ search.value = "";
 //variablar för de sökalternativ som dyker upp när vi söker
 const searchDrop = document.querySelector(".searchDropdown");
 //Variabel till sök knappen
-const submitButton = document.querySelector("#submit");
+const submitButton = document.querySelector("#submit-search");
 
 const electronics = document.querySelector("#electronic");
 const jewelery = document.querySelector("#jewelery");
