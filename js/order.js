@@ -23,7 +23,7 @@ if(window.localStorage.getItem("products")){
     addButton();
     subButton();
     removeProduct();
-    
+     
 
     //tar bort alla produkter
     const remove = document.querySelector('#remove');

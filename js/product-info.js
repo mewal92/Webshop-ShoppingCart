@@ -29,20 +29,22 @@ if (window.sessionStorage.getItem("productID") == null){
       //Kollar så att produkten inte redan är tillagd
       if(products.filter(p => p.id == product.id).length == 0){
         products.push(product);
+      
         //Ökar annars quantity
       } else{
         products.forEach((element) => {
           if(element.id == product.id){
             element.quantity++;
+           
           }
-        })
+        }) 
       }
       window.localStorage.setItem("products", JSON.stringify(products));
-      openForm();
+      location.reload();
       //Öppnar varukorgen när en vara lagts i korgen
-
-    })
-}
+    }) 
+    openForm();
+} 
 
 //fetcha valda produkten baserat på ID
 //Lägg till produkten som hämtas som ett produkt objekt och spara
@@ -80,3 +82,25 @@ function setHTMLValues(product){
   document.querySelector('#price').innerHTML = `<span>${product.price}€</span>`;
 }
 
+
+function updateCart() {
+  document.querySelector('#orders').innerHTML += 
+`<div class="cart">
+            <div class="product-and-title">
+                <div class="product-img">
+                    <img src="${product.imageURL}" alt="${product.title}">
+                </div>
+                <h3>${product.title}</h3>
+            </div>
+            
+            <p class="action-price"></p>
+            
+            <div class="quantity">
+                <button class="add" >+</button>
+                <button class="sub" >-</button>
+                <p class="productQuantity">x${product.quantity}</P>
+                <button class="delete" ><img src="images/delete.png" alt="trash"></button>
+            </div>`
+           
+;
+}
