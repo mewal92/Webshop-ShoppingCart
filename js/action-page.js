@@ -13,26 +13,26 @@ if(!window.sessionStorage.getItem('customer')){
     })
 
     document.querySelector("#address").innerHTML = `
-        Leveransadress: ${customer.address} ${customer.zip} ${customer.county}
+         ${customer.address}, ${customer.zip} ${customer.county}
     `;
     document.querySelector("#email").innerHTML = `
-        Orderbekräftelse skickas till: ${customer.email}
+        <b>Orderbekräftelse skickas till: ${customer.email}</b>
     `;
     document.querySelector("#name").innerHTML = `
-         ${customer.name}
+         ${customer.name} 
     `;
     document.querySelector("#phone").innerHTML = `
-        Telefon: ${customer.phone}
+        Tel: ${customer.phone}
     `;
     products.forEach(element => {
         document.querySelector("#title").innerHTML += `
-        Produkter: <ul class="vara">
+        <b>Produkter:</b> <ul class="vara">
             ${element.title} x${element.quantity}
         </ul>
     `;
     });   
     document.querySelector("#price").innerHTML = `
-        Att betala: ${cost.toFixed(2)}€
+        <b>Att betala: ${cost.toFixed(2)}€</b>
     `;
     window.localStorage.removeItem('products');
     window.sessionStorage.removeItem('customer');

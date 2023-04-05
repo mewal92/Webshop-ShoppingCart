@@ -504,18 +504,13 @@ box-shadow: -1px 1px 5px 6px rgba(39, 38, 38, 0.15);
     text-align: center;
   }
   
-  #name {
+  .contact-input {
     width: 70%;
     height: 30px;
     content: "";
     margin: 5px;
   }
-  #email {
-    width: 70%;
-    height: 30px;
-    content: "";
-    margin: 5px;
-  }
+ 
 
   #message {
     width: 70%;
@@ -939,7 +934,7 @@ box-shadow: -1px 1px 5px 6px rgba(39, 38, 38, 0.15);
   
   /*ACTION PAGE */
   .flex-containerorder{
-    background-color: #f8f8f89e;
+    background-color: #f8f8f8b7;
     width: 50%;
     margin: auto;
     padding: 20px;
@@ -962,6 +957,11 @@ box-shadow: -1px 1px 5px 6px rgba(39, 38, 38, 0.15);
     font-size: small;
     font-weight: normal;
     margin-bottom: 10px;
+  }
+
+  .order-text p {
+    font-size: 14px;
+  font-weight: bold;
   }
   
   
