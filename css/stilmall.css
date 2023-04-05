@@ -680,9 +680,10 @@ box-shadow: -1px 1px 5px 6px rgba(39, 38, 38, 0.15);
   }
   
   .submission button{
-    float: right;
+    float: center;
     margin-top: 10px;
-    background-color: #ff6739;
+    font-size: 20px;
+    background-color: #31d35c;
     color: white;
     text-align: center;
     width: 90;
@@ -960,7 +961,7 @@ box-shadow: -1px 1px 5px 6px rgba(39, 38, 38, 0.15);
   }
 
   .order-text p {
-    font-size: 14px;
+    font-size: 12px;
   font-weight: bold;
   }
   

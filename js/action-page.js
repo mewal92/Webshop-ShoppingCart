@@ -26,7 +26,7 @@ if(!window.sessionStorage.getItem('customer')){
     `;
     products.forEach(element => {
         document.querySelector("#title").innerHTML += `
-        <b>Produkter:</b> <ul class="vara">
+         <ul class="vara">
             ${element.title} x${element.quantity}
         </ul>
     `;
