@@ -82,25 +82,3 @@ function setHTMLValues(product){
   document.querySelector('#price').innerHTML = `<span>${product.price}€</span>`;
 }
 
-
-function updateCart() {
-  document.querySelector('#orders').innerHTML += 
-`<div class="cart">
-            <div class="product-and-title">
-                <div class="product-img">
-                    <img src="${product.imageURL}" alt="${product.title}">
-                </div>
-                <h3>${product.title}</h3>
-            </div>
-            
-            <p class="action-price"></p>
-            
-            <div class="quantity">
-                <button class="add" >+</button>
-                <button class="sub" >-</button>
-                <p class="productQuantity">x${product.quantity}</P>
-                <button class="delete" ><img src="images/delete.png" alt="trash"></button>
-            </div>`
-           
-;
-}
